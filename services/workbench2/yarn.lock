@@ -4249,6 +4249,42 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gmod/bgzf-filehandle@npm:^6.6.0":
+  version: 6.6.0
+  resolution: "@gmod/bgzf-filehandle@npm:6.6.0"
+  dependencies:
+    generic-filehandle2: ^2.2.1
+    pako-esm2: ^2.0.2
+  checksum: 7ddbab9eb0120ff2e6e47212f8ba252f06e5db5a0afb1e664e626d68d6485aa59e6e218bff82cbb30242b9bb5140725f29826e4a8da00910c00965fde3a19ee5
+  languageName: node
+  linkType: hard
+
+"@gmod/shared-read-cache@npm:^1.7.2":
+  version: 1.7.2
+  resolution: "@gmod/shared-read-cache@npm:1.7.2"
+  checksum: 0879304864fe7799c416c7f1c9773ce1f1cebc14fe119809dd5f2fa6aaba6986303ffca49fe087ff3c7cfb056895c425a5c39ec37102b19ffcae2aefc1bd1165
+  languageName: node
+  linkType: hard
+
+"@gmod/tabix@npm:^3.5.0":
+  version: 3.8.2
+  resolution: "@gmod/tabix@npm:3.8.2"
+  dependencies:
+    "@gmod/bgzf-filehandle": ^6.6.0
+    "@gmod/shared-read-cache": ^1.7.2
+    "@jbrowse/quick-lru": ^7.3.5
+    generic-filehandle2: ^2.2.1
+  checksum: ddab8ffe21959ec97c58fcabbae50107c72fba5c4447fa6e81db68eb7c4002e0af73cd122322ff33d9da1b715d6f25cc8c9e1433a89966ab5c52fd8092e3ac97
+  languageName: node
+  linkType: hard
+
+"@gmod/vcf@npm:^7.0.10":
+  version: 7.2.0
+  resolution: "@gmod/vcf@npm:7.2.0"
+  checksum: 60a4646992330eacfb2245766751263e576bb5c06e02c76bed541c7f62bada1d1e55b358c6058baae182bf35d607aec2436dd0a8d93c03ef4f0ead9d108431c7
+  languageName: node
+  linkType: hard
+
 "@hapi/hoek@npm:^9.0.0":
   version: 9.2.0
   resolution: "@hapi/hoek@npm:9.2.0"
@@ -4308,6 +4344,13 @@ __metadata:
     wrap-ansi: ^8.1.0
     wrap-ansi-cjs: "npm:wrap-ansi@^7.0.0"
   checksum: 4a473b9b32a7d4d3cfb7a614226e555091ff0c5a29a1734c28c72a182c2f6699b26fc6b5c2131dfd841e86b185aea714c72201d7c98c2fba5f17709333a67aeb
+  languageName: node
+  linkType: hard
+
+"@jbrowse/quick-lru@npm:^7.3.5":
+  version: 7.3.5
+  resolution: "@jbrowse/quick-lru@npm:7.3.5"
+  checksum: d4a6bdf3b1df124b88c723896b18662c9991354dcb00b2d9d03c2f8c2daa88b7c72bc1cab4f661af90bea6872607f76c6d65d4f11224e6264e631e9c0043335a
   languageName: node
   linkType: hard
 
@@ -6646,6 +6689,8 @@ __metadata:
     "@fortawesome/fontawesome-svg-core": 1.2.28
     "@fortawesome/free-solid-svg-icons": 5.13.0
     "@fortawesome/react-fontawesome": 0.1.9
+    "@gmod/tabix": ^3.5.0
+    "@gmod/vcf": ^7.0.10
     "@mui/icons-material": ^5.15.20
     "@mui/material": ^5.15.20
     "@mui/styles": ^5.15.20
@@ -6687,6 +6732,7 @@ __metadata:
     bfj: ^7.0.2
     bootstrap: ^5.3.2
     browserslist: ^4.18.1
+    buffer: ^6.0.3
     camelcase: ^6.2.1
     caniuse-lite: 1.0.30001612
     case-sensitive-paths-webpack-plugin: ^2.4.0
@@ -6711,6 +6757,7 @@ __metadata:
     file-saver: 2.0.1
     fs-extra: ^10.0.0
     fstream: 1.0.12
+    generic-filehandle2: ^2.2.1
     html-webpack-plugin: ^5.5.0
     identity-obj-proxy: ^3.0.0
     is-image: 3.0.0
@@ -7349,6 +7396,16 @@ __metadata:
     base64-js: ^1.3.1
     ieee754: ^1.1.13
   checksum: e2cf8429e1c4c7b8cbd30834ac09bd61da46ce35f5c22a78e6c2f04497d6d25541b16881e30a019c6fd3154150650ccee27a308eff3e26229d788bbdeb08ab84
+  languageName: node
+  linkType: hard
+
+"buffer@npm:^6.0.3":
+  version: 6.0.3
+  resolution: "buffer@npm:6.0.3"
+  dependencies:
+    base64-js: ^1.3.1
+    ieee754: ^1.2.1
+  checksum: 5ad23293d9a731e4318e420025800b42bf0d264004c0286c8cc010af7a270c7a0f6522e84f54b9ad65cbd6db20b8badbfd8d2ebf4f80fa03dab093b89e68c3f9
   languageName: node
   linkType: hard
 
@@ -10593,6 +10650,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"generic-filehandle2@npm:^2.2.1":
+  version: 2.4.0
+  resolution: "generic-filehandle2@npm:2.4.0"
+  checksum: 978eb6bbdd43e466d8d83d334c38a396365e66e13b274de9303d30ebdd630b112881982876f542f71e2b5f2eb0214abf09102a96dcf89a6733989dac1ccd5042
+  languageName: node
+  linkType: hard
+
 "gensync@npm:^1.0.0-beta.2":
   version: 1.0.0-beta.2
   resolution: "gensync@npm:1.0.0-beta.2"
@@ -11393,7 +11457,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ieee754@npm:^1.1.13":
+"ieee754@npm:^1.1.13, ieee754@npm:^1.2.1":
   version: 1.2.1
   resolution: "ieee754@npm:1.2.1"
   checksum: 5144c0c9815e54ada181d80a0b810221a253562422e7c6c3a60b1901154184f49326ec239d618c416c1c5945a2e197107aee8d986a3dd836b53dffefd99b5e7e
@@ -14063,6 +14127,13 @@ __metadata:
   version: 1.0.1
   resolution: "package-json-from-dist@npm:1.0.1"
   checksum: 58ee9538f2f762988433da00e26acc788036914d57c71c246bf0be1b60cdbd77dd60b6a3e1a30465f0b248aeb80079e0b34cb6050b1dfa18c06953bb1cbc7602
+  languageName: node
+  linkType: hard
+
+"pako-esm2@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "pako-esm2@npm:2.0.2"
+  checksum: 5e716be7a518ed44c2ee82a2310b985159ae9f97fb80d7b6ae92a8ed4d457aae6266f1d8a95c876e5ae784f3bb6a7d4a435c3b81fa3d6c7f84f3df63251b5037
   languageName: node
   linkType: hard
 
