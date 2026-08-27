@@ -6,7 +6,7 @@ import React from 'react';
 import { CustomStyleRulesCallback } from 'common/custom-theme';
 import { Chip, Grid } from '@mui/material';
 import withStyles from '@mui/styles/withStyles';
-import { getTagKeyID, getTagValueID, getTagKeyLabel, getTagValueLabel } from 'models/vocabulary';
+import { getTagKeyID, getTagValueID, getTagKeyLabel, getTagValueLabel, isStrictTag } from 'models/vocabulary';
 import {
     DragSource,
     DragSourceSpec,
@@ -167,7 +167,14 @@ export const getVocabularyFromChips = (chips: PropertyChips, vocabulary: Vocabul
 
         const mappedTagKeyID = getTagKeyID(keyLabel, vocabulary);
         const tagKeyID = mappedTagKeyID || keyLabel;
+        // strict_tags restricts which KEYS may be saved.
         if (strictMode && !mappedTagKeyID) continue;
+
+        // Whether a VALUE may be freetext is governed solely by the tag's own
+        // `strict` flag, independently of strict_tags. A tag that is not strict
+        // (explicitly false, or unset) accepts arbitrary values such as IDs,
+        // report numbers or URLs, and those must survive being saved.
+        const allowsFreetextValue = !isStrictTag(tagKeyID, vocabulary);
 
         if (Array.isArray(valueLabel)) {
             const vocabularyValues: string[] = [];
@@ -177,7 +184,7 @@ export const getVocabularyFromChips = (chips: PropertyChips, vocabulary: Vocabul
                     vocabularyValues.push(tagValueID);
                     continue;
                 }
-                if (!strictMode) {
+                if (allowsFreetextValue) {
                     vocabularyValues.push(singleValue);
                 }
             }
@@ -188,7 +195,7 @@ export const getVocabularyFromChips = (chips: PropertyChips, vocabulary: Vocabul
             const tagValueID = getTagValueID(tagKeyID, valueLabel, vocabulary);
             if (tagValueID) {
                 vocabularyChips[tagKeyID] = tagValueID;
-            } else if (!strictMode) {
+            } else if (allowsFreetextValue) {
                 vocabularyChips[tagKeyID] = valueLabel;
             }
         }
